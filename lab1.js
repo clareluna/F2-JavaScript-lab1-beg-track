@@ -58,7 +58,11 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-
+assert('wolves' > 'cheetahs', 'Howl at the moon!');
+assert('cats' < 'lions' && 'dogs' > 'wolves', 'Faster, wilder, stronger'); /*this code fails because 
+of the AND logical operator. While cats are less than lions (alphebetically speaking), dogs are not 
+greater than wolves, again aphebetically. Therefore the second operator is false and the assertion 
+fails*/
 //your code goes here
 
 /* ========================================================================
@@ -79,14 +83,27 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
+var sentence1 = 'More food please.';
+var splitString = sentence1.split(" ");
+for (var i=0; i< splitString.length; i++){ 
+  splitString[i]= "chirp";
+}
+sentence1 = splitString.join([separator = ' ']);
 
-// your code goes here
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-// your code goes here
-
+var sentence2 = 'Come over here so you can scratch my belly.';
+var splitString2 = sentence2.split(' ');
+var j = splitString2.length;
+while (j--){
+  splitString2[j] = "chirp";
+}
+sentence2 = splitString2.join([separator = ' ']);
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -102,12 +119,26 @@ assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
 */
 
 var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
-var nextAnimal;
 
+var nextAnimal = Math.random();
+
+if(nextAnimal<0.25) {
+  nextAnimal = favoriteAnimals[0];
+} else if (nextAnimal>0.25 && nextAnimal<0.5) {
+  nextAnimal = favoriteAnimals[1];
+} else if (nextAnimal>0.5 && nextAnimal<0.75) {
+  nextAnimal = favoriteAnimals[2];
+} else if (nextAnimal>0.75) {
+  nextAnimal = favoriteAnimals[3];
+}
+
+console.log(nextAnimal);
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
 // your code goes here
+//nextAnimal = //make a math random equation that goes 0-0.25, 0.25-0.5, 0.5-0.75, 0.75-1 correspond to array postions
+
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -124,10 +155,10 @@ assert(nextAnimal, 'assign something to nextAnimal');
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  'numberOpen': 13,
+  numberOpen: 13,
   'number closed': 2,
   'petting-zoo-open': true,
-  'mostPopular': 'Lucky the Emperor Penguin',
+  mostPopular: 'Lucky the Emperor Penguin',
   '2ndMostPopular': 'Dumbo the Depressed Donkey'
 };
 
@@ -138,7 +169,7 @@ var animalExhibitStats = {
  notation with dot notation wherever possible.
 */
 
-assert(animalExhibitStats['numberOpen'] === 13, 'there should be 13 open exhibits');
+assert(animalExhibitStats.numberOpen === 13, 'there should be 13 open exhibits');
 assert(animalExhibitStats['number closed'] === 2, 'there should be 2 closed exhibits');
 assert(animalExhibitStats['petting-zoo-open'], 'hey! =( i was promised meerkats!');
 assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
@@ -148,7 +179,7 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 // Write an assert about the 'mostPopular' property of animalExibitStats.
 // Use the above examples to guide you.
 
-// your assert goes here
+assert(animalExhibitStats.mostPopular === "Lucky the Emperor Penguin", 'A regal eagle indeed');
 
 /* ==================================================================
 ----------------- Code Style (10 points) ----------------------------
