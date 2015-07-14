@@ -88,14 +88,9 @@ var splitString = sentence1.split(" ");
 for (var i=0; i< splitString.length; i++){ 
   splitString[i]= "chirp";
 }
-sentence1 = splitString.join([separator = ' ']);
+sentence1 = splitString.join([separator = ' '])
 
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-// TODO: part #2: use a while or do-while loop to replace the words in sentence 2
-// with 'chirp' (10 points)
 
 var sentence2 = 'Come over here so you can scratch my belly.';
 var splitString2 = sentence2.split(' ');
@@ -103,7 +98,7 @@ var j = splitString2.length;
 while (j--){
   splitString2[j] = "chirp";
 }
-sentence2 = splitString2.join([separator = ' ']);
+sentence2 = splitString2.join([separator = ' '])
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -123,19 +118,18 @@ var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
 var nextAnimal = Math.random();
 
 if(nextAnimal<0.25) {
-  nextAnimal = favoriteAnimals[0];
+  nextAnimal = favoriteAnimals[0]
 } else if (nextAnimal>0.25 && nextAnimal<0.5) {
-  nextAnimal = favoriteAnimals[1];
+  nextAnimal = favoriteAnimals[1]
 } else if (nextAnimal>0.5 && nextAnimal<0.75) {
-  nextAnimal = favoriteAnimals[2];
+  nextAnimal = favoriteAnimals[2]
 } else if (nextAnimal>0.75) {
-  nextAnimal = favoriteAnimals[3];
-}
+  nextAnimal = favoriteAnimals[3]
+};
 
 console.log(nextAnimal);
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
-
 // your code goes here
 //nextAnimal = //make a math random equation that goes 0-0.25, 0.25-0.5, 0.5-0.75, 0.75-1 correspond to array postions
 
